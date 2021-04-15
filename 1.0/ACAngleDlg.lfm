@@ -1,0 +1,44 @@
+object ACObliquingDialog: TACObliquingDialog
+  Left = 256
+  Top = 205
+  Hint = #1054#1087#1088#1077#1076#1077#1083#1103#1077#1090' '#1091#1075#1086#1083' '#1085#1072#1082#1083#1086#1085#1072' '#1090#1077#1082#1089#1090#1072' '#1074' ACAD'#39#1077
+  ActiveControl = Edit
+  BorderStyle = bsDialog
+  Caption = #1059#1075#1086#1083' '#1085#1072#1082#1083#1086#1085#1072', '#176
+  ClientHeight = 64
+  ClientWidth = 165
+  Color = clBtnFace
+  ParentFont = True
+  Position = poScreenCenter
+  ShowHint = True
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object OKBtn: TButton
+    Left = 4
+    Top = 35
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object CancelBtn: TButton
+    Left = 84
+    Top = 35
+    Width = 75
+    Height = 25
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object Edit: TEdit
+    Left = 5
+    Top = 5
+    Width = 131
+    Height = 21
+    TabOrder = 2
+  end
+end

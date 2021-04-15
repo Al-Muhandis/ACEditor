@@ -1,0 +1,479 @@
+object FrmOptions: TFrmOptions
+  Left = 318
+  Height = 329
+  Top = 234
+  Width = 525
+  HorzScrollBar.Page = 524
+  VertScrollBar.Page = 328
+  ActiveControl = BtnYes
+  BorderStyle = bsDialog
+  Caption = 'Настройки'
+  ClientHeight = 329
+  ClientWidth = 525
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  object PnlBtns: TPanel
+    Height = 27
+    Top = 302
+    Width = 525
+    Align = alBottom
+    AutoSize = True
+    BevelInner = bvRaised
+    BevelOuter = bvNone
+    BorderWidth = 1
+    ClientHeight = 27
+    ClientWidth = 525
+    TabOrder = 0
+    object BtnYes: TButton
+      Left = 2
+      Height = 25
+      Top = 2
+      Width = 75
+      Caption = 'Да'
+      Default = True
+      ModalResult = 6
+      TabOrder = 0
+    end
+    object BtnCancel: TButton
+      Left = 85
+      Height = 25
+      Top = 2
+      Width = 75
+      Cancel = True
+      Caption = 'Отмена'
+      ModalResult = 2
+      TabOrder = 1
+    end
+    object BtnDefault: TButton
+      Left = 415
+      Height = 25
+      Top = 2
+      Width = 105
+      Caption = 'По умолчанию'
+      OnClick = BtnDefaultClick
+      TabOrder = 2
+    end
+  end
+  object PgCntrl: TPageControl
+    Height = 302
+    Width = 525
+    ActivePage = TbShtACAD
+    Align = alClient
+    ParentShowHint = False
+    ShowHint = True
+    TabIndex = 0
+    TabOrder = 1
+    object TbShtACAD: TTabSheet
+      Caption = 'AutoCAD'
+      ClientHeight = 276
+      ClientWidth = 517
+      object GrpBxStack: TGroupBox
+        Height = 161
+        Hint = 'При вставке 2-уровневого текста установить дополнительные коды форматирования'
+        Width = 301
+        Caption = 'Автоформат при вставке 2-уровневого текста'
+        ClientHeight = 143
+        ClientWidth = 297
+        TabOrder = 0
+        object BvlAlign: TBevel
+          Left = 10
+          Height = 61
+          Top = 70
+          Width = 273
+          Shape = bsFrame
+        end
+        object BvlHeight: TBevel
+          Left = 10
+          Height = 61
+          Top = 2
+          Width = 273
+          Shape = bsFrame
+        end
+        object LblAlign: TLabel
+          Left = 125
+          Height = 13
+          Top = 122
+          Width = 150
+          AutoSize = False
+          ParentColor = False
+        end
+        object LblHeight: TLabel
+          Left = 125
+          Height = 13
+          Top = 55
+          Width = 150
+          AutoSize = False
+          ParentColor = False
+        end
+        object ChckBxFontHeight: TCheckBox
+          Left = 20
+          Height = 19
+          Hint = 'Изменить формат 2-уровневого текста путем установки кода изменения высоты шрифта'
+          Top = 7
+          Width = 196
+          Caption = 'Изменять размер текста в стеке'
+          OnClick = ChckBxClick
+          TabOrder = 0
+        end
+        object BtnFontHeight: TButton
+          Left = 18
+          Height = 26
+          Top = 32
+          Width = 100
+          Caption = 'Задать...'
+          OnClick = BtnFontHeightClick
+          TabOrder = 1
+        end
+        object ChckBxAlignment: TCheckBox
+          Left = 23
+          Height = 19
+          Hint = 'В начале текста установится код выравнивания строк относительно вертикали'
+          Top = 77
+          Width = 152
+          Caption = 'Выравнивать весь текст'
+          OnClick = ChckBxClick
+          TabOrder = 2
+        end
+        object BtnAlignment: TButton
+          Left = 18
+          Height = 26
+          Top = 100
+          Width = 100
+          Caption = 'Задать...'
+          OnClick = BtnAlignmentClick
+          TabOrder = 3
+        end
+      end
+      object GrpBxACADFont: TGroupBox
+        Left = 310
+        Height = 60
+        Hint = 'Данный шрифт по умолчанию для окон выбора кода форматирования шрифта и в таблице символов'
+        Width = 191
+        Caption = 'Шрифт в AutoCAD''е по умолчанию'
+        TabOrder = 1
+      end
+    end
+    object TbShtEditor: TTabSheet
+      Caption = 'Редактор'
+      ImageIndex = 1
+      object GrpBxView: TGroupBox
+        Height = 89
+        Width = 246
+        Caption = 'Поле текста'
+        ClientHeight = 89
+        ClientWidth = 246
+        TabOrder = 0
+        object LblPreview: TLabel
+          Left = 90
+          Height = 57
+          Top = 2
+          Width = 146
+          Alignment = taCenter
+          AutoSize = False
+          Caption = 'ABCD abcd АБВГД абвгд 12345   + - * /'
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Layout = tlCenter
+          ParentColor = False
+          ShowAccelChar = False
+          WordWrap = True
+        end
+        object BtnFont: TButton
+          Left = 8
+          Height = 25
+          Top = 3
+          Width = 75
+          Caption = 'Шрифт...'
+          OnClick = BtnFontClick
+          TabOrder = 0
+        end
+        object BtnBackground: TButton
+          Left = 8
+          Height = 25
+          Top = 33
+          Width = 75
+          Caption = 'Фон...'
+          OnClick = BtnBackgroundClick
+          TabOrder = 1
+        end
+      end
+      object GrpBxTemplate: TGroupBox
+        Height = 88
+        Top = 90
+        Width = 501
+        Caption = 'Текстовые заготовки'
+        ClientHeight = 88
+        ClientWidth = 501
+        TabOrder = 1
+        object LblInsert: TLabel
+          Left = 173
+          Height = 14
+          Top = 40
+          Width = 180
+          Alignment = taRightJustify
+          Caption = 'Способ загрузки файла-заготовки:'
+          ParentColor = False
+        end
+        object LblDirTitle: TLabel
+          Left = 56
+          Height = 13
+          Top = 9
+          Width = 113
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = 'Папка для заготовок:'
+          FocusControl = BtnBrowse
+          ParentColor = False
+        end
+        object ComboBoxImport: TComboBox
+          Left = 362
+          Height = 21
+          Top = 40
+          Width = 129
+          AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+          ItemHeight = 13
+          ItemIndex = 0
+          Items.Strings = (
+            'Вставить в текст'
+            'Заменить текст'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Вставить в текст'
+        end
+        object EdtDir: TEdit
+          Left = 175
+          Height = 21
+          Top = 8
+          Width = 291
+          Color = clBtnFace
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object BtnBrowse: TButton
+          Left = 468
+          Height = 24
+          Top = 5
+          Width = 23
+          Caption = '...'
+          OnClick = BtnBrowseClick
+          TabOrder = 2
+        end
+      end
+      object GrpBxWindow: TGroupBox
+        Left = 255
+        Height = 89
+        Width = 246
+        Caption = 'Окно программы'
+        ClientHeight = 71
+        ClientWidth = 242
+        TabOrder = 2
+        object ChckBxOnTop: TCheckBox
+          Left = 9
+          Height = 19
+          Top = 23
+          Width = 99
+          Caption = 'Поверх других'
+          TabOrder = 0
+        end
+        object EditAlphaBlend: TEdit
+          Left = 135
+          Height = 21
+          Top = 3
+          Width = 76
+          OnKeyDown = nil
+          TabOrder = 1
+          Text = '255'
+        end
+        object ChckBxAlphaBlend: TCheckBox
+          Left = 9
+          Height = 19
+          Top = 3
+          Width = 121
+          Caption = 'Прозрачность (XP)'
+          OnClick = ChckBxAlphaBlendClick
+          TabOrder = 2
+        end
+        object UpDownAlphaBlend: TUpDown
+          Left = 211
+          Height = 21
+          Top = 3
+          Width = 16
+          Associate = EditAlphaBlend
+          Max = 255
+          Increment = 10
+          Position = 255
+          TabOrder = 3
+          Thousands = False
+        end
+        object ChckBxOnCenter: TCheckBox
+          Left = 9
+          Height = 19
+          Top = 43
+          Width = 110
+          Caption = 'В центре экрана'
+          TabOrder = 4
+        end
+      end
+      object GrpBxKeyboard: TGroupBox
+        Height = 79
+        Top = 192
+        Width = 501
+        Caption = 'Удобство'
+        ClientHeight = 61
+        ClientWidth = 497
+        TabOrder = 3
+        object LblKBLayout: TLabel
+          Left = 16
+          Height = 14
+          Top = 37
+          Width = 143
+          Alignment = taRightJustify
+          Caption = 'Переключаться в ракладку'
+          ParentColor = False
+        end
+        object ChckBxSelectAtRun: TCheckBox
+          Left = 13
+          Height = 19
+          Top = 2
+          Width = 206
+          Caption = 'Выделять весь текст при открытии'
+          TabOrder = 0
+        end
+        object ChckBxMainMenu: TCheckBox
+          Left = 256
+          Height = 19
+          Top = 2
+          Width = 164
+          Caption = 'Показывать верхнее меню'
+          TabOrder = 1
+        end
+        object CmbBxKBLayout: TComboBox
+          Left = 165
+          Height = 21
+          Top = 32
+          Width = 145
+          AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+          ItemHeight = 13
+          Items.Strings = (
+            'По умолчанию'
+            'Английская En'
+            'Русская Ru'
+          )
+          Style = csDropDownList
+          TabOrder = 2
+        end
+      end
+    end
+    object TbShtTools: TTabSheet
+      Caption = 'Инструменты'
+      ImageIndex = 3
+      object GrpBxEnumeration: TGroupBox
+        Left = 5
+        Height = 176
+        Top = 5
+        Width = 186
+        Caption = 'Нумерация'
+        ClientHeight = 176
+        ClientWidth = 186
+        TabOrder = 0
+        object LblFormat: TLabel
+          Left = 18
+          Height = 14
+          Top = 5
+          Width = 145
+          Caption = 'Формат (номер заменяет ''#'')'
+          FocusControl = EdtEnumFormat
+          ParentColor = False
+        end
+        object EdtEnumFormat: TEdit
+          Left = 13
+          Height = 21
+          Hint = 'Текстовой формат нумерации. Например: "#. " соответствует "1. " и т.д.'
+          Top = 25
+          Width = 156
+          OnChange = ToolsChange
+          TabOrder = 0
+          Text = '  # '
+        end
+        object RdGrpEnumaration: TRadioGroup
+          Left = 13
+          Height = 86
+          Top = 60
+          Width = 156
+          AutoFill = True
+          Caption = 'Тип счисления'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.TopBottomSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 86
+          ClientWidth = 156
+          ItemIndex = 0
+          Items.Strings = (
+            'Числа (1, 2, 3...)'
+            'Кириллица (а, б, в...)'
+            'Латиница (a, b, c...)'
+          )
+          OnClick = ToolsChange
+          TabOrder = 1
+        end
+      end
+    end
+    object TbShtAbout: TTabSheet
+      Caption = 'О программе'
+      ImageIndex = 2
+      object Bvl: TBevel
+        Left = 5
+        Height = 246
+        Top = 10
+        Width = 506
+        Shape = bsFrame
+      end
+      object MmAbout: TMemo
+        Cursor = crHelp
+        Left = 12
+        Height = 226
+        Top = 18
+        Width = 486
+        Alignment = taCenter
+        Color = clBtnFace
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        Lines.Strings = (
+          'Внешний текстовой редактор с "открытым" кодом для AutoCAD''а'
+          'ACEditor 4.0'
+          'Разработал: Сулейманов Ренат, г. Астрахань'
+          'Дата: Июнь, 2006 г.'
+          ''
+          ''
+          'О найденных ошибках или по поводу предложений по '
+          'улучшению '
+          'программы обращаться к автору.'
+          'e-mail: SuleymanovR@yandex.ru'
+        )
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+  object ClrDlg: TColorDialog
+    Title = 'Выбрать цвет'
+    left = 408
+    top = 72
+  end
+  object FntDlg: TFontDialog
+    Title = 'Выбрать шрифт'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    left = 236
+    top = 80
+  end
+end

@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <PathDelim Value="\"/>
+    <Version Value="6"/>
+    <General>
+      <MainUnit Value="0"/>
+      <IconPath Value="./"/>
+      <TargetFileExt Value=".exe"/>
+      <ActiveEditorIndexAtStart Value="0"/>
+    </General>
+    <VersionInfo>
+      <ProjectVersion Value=""/>
+      <Language Value=""/>
+      <CharSet Value=""/>
+    </VersionInfo>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="MirrorKOLPackage"/>
+        <MinVersion Major="2" Minor="80" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="MirrorKOLPackage"/>
+      </Item2>
+    </RequiredPackages>
+    <Units Count="18">
+      <Unit0>
+        <Filename Value="ACEditor.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ACEditor"/>
+        <CursorPos X="1" Y="20"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="56"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="mainform.pas"/>
+        <ComponentName Value="Frm"/>
+        <IsPartOfProject Value="True"/>
+        <ResourceFilename Value="mainform.lrs"/>
+        <UnitName Value="MainForm"/>
+        <CursorPos X="1" Y="456"/>
+        <TopLine Value="456"/>
+        <EditorIndex Value="0"/>
+        <UsageCount Value="56"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="mainform_1.inc"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="cmn.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Cmn"/>
+        <CursorPos X="45" Y="38"/>
+        <TopLine Value="19"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="52"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\lazarus\components\kolce\kol\KOL.PAS"/>
+        <UnitName Value="KOL"/>
+        <CursorPos X="3" Y="22086"/>
+        <TopLine Value="22076"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="acadtypes.pas"/>
+        <UnitName Value="ACADTypes"/>
+        <CursorPos X="1" Y="39"/>
+        <TopLine Value="243"/>
+        <UsageCount Value="20"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <CursorPos X="14" Y="1743"/>
+        <TopLine Value="1723"/>
+        <UsageCount Value="9"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\win\wininc\func.inc"/>
+        <CursorPos X="10" Y="61"/>
+        <TopLine Value="41"/>
+        <UsageCount Value="9"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\win\wininc\ascdef.inc"/>
+        <CursorPos X="10" Y="69"/>
+        <TopLine Value="49"/>
+        <UsageCount Value="9"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\packages\fcl-registry\src\registry.pp"/>
+        <UnitName Value="registry"/>
+        <CursorPos X="15" Y="103"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="9"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\objpas\sysutils\sysstrh.inc"/>
+        <CursorPos X="10" Y="138"/>
+        <TopLine Value="113"/>
+        <UsageCount Value="9"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\objpas\sysutils\sysstr.inc"/>
+        <CursorPos X="1" Y="1325"/>
+        <TopLine Value="1286"/>
+        <UsageCount Value="9"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\win\sysutils.pp"/>
+        <UnitName Value="sysutils"/>
+        <CursorPos X="16" Y="708"/>
+        <TopLine Value="688"/>
+        <UsageCount Value="9"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\objpas\sysutils\sysinth.inc"/>
+        <CursorPos X="1" Y="87"/>
+        <TopLine Value="52"/>
+        <UsageCount Value="9"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="C:\lazarus\components\kolce\kol\KOLadd.pas"/>
+        <UnitName Value="KOLadd"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="9"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="ACAttributes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ACAttributes"/>
+        <CursorPos X="3" Y="452"/>
+        <TopLine Value="580"/>
+        <UsageCount Value="40"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="C:\lazarus\components\kolce\kol\MCKfakeClasses.inc"/>
+        <CursorPos X="22" Y="41"/>
+        <TopLine Value="21"/>
+        <UsageCount Value="9"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <CursorPos X="1" Y="5684"/>
+        <TopLine Value="5665"/>
+        <UsageCount Value="10"/>
+      </Unit17>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="mainform_1.inc"/>
+        <Caret Line="62" Column="17" TopLine="55"/>
+      </Position1>
+      <Position2>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="93" Column="40" TopLine="92"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="5"/>
+    <PathDelim Value="\"/>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Generate Value="Smaller"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseLineInfoUnit Value="False"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Watches Count="1">
+      <Item1>
+        <Expression Value="MsgMustOpenFromCAD"/>
+      </Item1>
+    </Watches>
+    <Exceptions Count="2">
+      <Item1>
+        <Name Value="ECodetoolError"/>
+      </Item1>
+      <Item2>
+        <Name Value="EFOpenError"/>
+      </Item2>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

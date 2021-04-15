@@ -1,0 +1,15 @@
+{ Это - файл ресурсов, автоматически созданный lazarus }
+
+LazarusResources.Add('TDlgFormatCode','FORMDATA',[
+  'TPF0'#14'TDlgFormatCode'#13'DlgFormatCode'#4'Left'#3#155#1#6'Height'#3','#1#3
+  +'Top'#3#17#1#5'Width'#3#12#2#18'HorzScrollBar.Page'#3#11#2#18'VertScrollBar.'
+  +'Page'#3'+'#1#7'Caption'#6#13#212#238#240#236#224#242' '#242#229#234#241#242
+  +#224#12'ClientHeight'#3','#1#11'ClientWidth'#3#12#2#0#9'TGroupBox'#9'GroupBo'
+  +'x1'#4'Left'#2#8#6'Height'#2'1'#3'Top'#2#8#5'Width'#3#232#0#7'Caption'#6#9'G'
+  +'roupBox1'#12'ClientHeight'#2#31#11'ClientWidth'#3#228#0#8'TabOrder'#2#0#0#9
+  +'TComboBox'#9'ComboBox1'#4'Left'#2#6#6'Height'#2#21#5'Width'#3#145#0#16'Auto'
+  +'CompleteText'#11#22'cbactEndOfLineComplete'#20'cbactSearchAscending'#0#10'I'
+  +'temHeight'#2#13#8'TabOrder'#2#0#4'Text'#6#9'ComboBox1'#0#0#9'TSpinEdit'#9'S'
+  +'pinEdit1'#4'Left'#3#158#0#6'Height'#2#23#5'Width'#2'@'#8'TabOrder'#2#1#0#0#0
+  +#0
+]);

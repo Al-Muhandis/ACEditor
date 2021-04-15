@@ -1,0 +1,19 @@
+{ Это - файл ресурсов, автоматически созданный lazarus }
+
+LazarusResources.Add('TACWidthDialog','FORMDATA',[
+  'TPF0'#14'TACWidthDialog'#13'ACWidthDialog'#4'Left'#3#0#1#6'Height'#3#240#0#4
+  +'Hint'#6'.'#199#224#228#224#229#242' '#248#232#240#232#237#243' '#241#232#236
+  +#226#238#235#238#226' '#238#242#237#238#241#232#242#229#235#252#237#238' '
+  +#237#238#240#236#224#235#252#237#238#233#3'Top'#3#205#0#5'Width'#3'@'#1#18'H'
+  +'orzScrollBar.Page'#3'?'#1#18'VertScrollBar.Page'#3#239#0#13'ActiveControl'#7
+  +#4'Edit'#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#21#216#232#240#232#237
+  +#224' '#241#232#236#226#238#235#238#226', '#238'.'#229'.'#12'ClientHeight'#3
+  +#240#0#11'ClientWidth'#3'@'#1#8'OnCreate'#7#10'FormCreate'#10'ParentFont'#9#8
+  +'Position'#7#14'poScreenCenter'#8'ShowHint'#9#0#7'TButton'#5'OKBtn'#4'Left'#2
+  +#4#6'Height'#2#25#3'Top'#2'#'#5'Width'#2'K'#7'Caption'#6#2'OK'#7'Default'#9
+  +#11'ModalResult'#2#1#8'TabOrder'#2#0#0#0#7'TButton'#9'CancelBtn'#4'Left'#2'T'
+  +#6'Height'#2#25#3'Top'#2'#'#5'Width'#2'K'#6'Cancel'#9#7'Caption'#6#6'Cancel'
+  +#11'ModalResult'#2#2#8'TabOrder'#2#1#0#0#5'TEdit'#4'Edit'#4'Left'#2#5#6'Heig'
+  +'ht'#2#21#3'Top'#2#5#5'Width'#3#131#0#14'ParentShowHint'#8#8'TabOrder'#2#2#0
+  +#0#0
+]);

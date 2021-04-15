@@ -1,0 +1,876 @@
+object Frm: TFrm
+  Left = 447
+  Height = 300
+  Top = 252
+  Width = 409
+  HorzScrollBar.Page = 408
+  VertScrollBar.Page = 279
+  Caption = 'Правка многострочного текста'
+  ClientHeight = 280
+  ClientWidth = 409
+  object Mm: TKOLMemo
+    Left = 2
+    Height = 240
+    Top = 2
+    Width = 405
+    TabOrder = 0
+    Align = caClient
+    Font.Color = clWindowText
+    Font.FontName = 'MS Sans Serif'
+    Font.FontCharset = 1
+    Font.FontPitch = fpVariable
+    Options = [eo_NoHScroll]
+    popupMenu = PppMn
+    Brush.Color = clWindow
+  end
+  object PnlBtns: TKOLPanel
+    Left = 2
+    Height = 34
+    Top = 244
+    Width = 405
+    AcceptChildren = True
+    TabOrder = 1
+    Align = caBottom
+    Font.Color = clWindowText
+    Font.FontName = 'MS Sans Serif'
+    Font.FontCharset = 1
+    Font.FontPitch = fpVariable
+    edgeStyle = esNone
+    Border = 0
+    Brush.Color = clBtnFace
+    object BtnOk: TKOLButton
+      Height = 34
+      Width = 241
+      AnchorLeft = True
+      AnchorTop = True
+      AnchorRight = True
+      AnchorBottom = True
+      TabOrder = 0
+      Caption = 'Сохранить'
+      Font.Color = clWindowText
+      Font.FontName = 'MS Sans Serif'
+      Font.FontCharset = 1
+      Font.FontPitch = fpVariable
+      Border = 2
+      DefaultBtn = True
+    end
+    object BtnCancel: TKOLButton
+      Left = 241
+      Height = 34
+      Width = 164
+      AnchorTop = True
+      AnchorRight = True
+      AnchorBottom = True
+      TabOrder = 1
+      Caption = 'Без изменений'
+      Font.Color = clWindowText
+      Font.FontName = 'MS Sans Serif'
+      Font.FontCharset = 1
+      Font.FontPitch = fpVariable
+      Border = 2
+      CancelBtn = True
+    end
+  end
+  object Button1: TKOLButton
+    Left = 112
+    Height = 94
+    Top = 200
+    Width = 184
+    TabOrder = 2
+    Caption = 'Button1'
+    Font.Color = clWindowText
+    Font.FontName = 'MS Sans Serif'
+    Font.FontCharset = 1
+    Font.FontPitch = fpVariable
+    OnClick = Button1Click
+    Border = 2
+  end
+  object KOLPrjct: TKOLProject
+    projectName = 'ACEditor'
+    projectDest = 'ACEditor'
+    sourcePath = 'D:\Документы\Ренат\Developments\Pascal\Lazarus\ACEditor\'
+    outdcuPath = 'D:\Документы\Ренат\Developments\Pascal\Lazarus\ACEditor\'
+    left = 35
+    top = 34
+  end
+  object KOLFrm: TKOLForm
+    Caption = 'Правка многострочного текста'
+    OnClose = KOLFrmClose
+    UnitSourcePath = 'D:\Документы\Ренат\Developments\Pascal\Lazarus\ACEditor\'
+    formUnit = 'mainform'
+    formMain = True
+    Font.Color = clWindowText
+    Font.FontName = 'MS Sans Serif'
+    Font.FontCharset = 1
+    Font.FontPitch = fpVariable
+    Brush.Color = clBtnFace
+    OnFormCreate = KOLFrmFormCreate
+    left = 68
+    top = 34
+  end
+  object ActnLst: TKOLActionList
+    left = 35
+    top = 96
+    object ActnFileOpen: TKOLAction
+      Caption = 'Вставить из...'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkO
+      OnExecute = ActnFileOpenExecute
+      Links = (
+        'Frm.MnMn.miFileInsertFrom'
+      )
+    end
+    object ActnFileSaveAs: TKOLAction
+      Caption = 'Сохранить как...'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkS
+      OnExecute = ActnFileSaveAsExecute
+      Links = (
+        'Frm.MnMn.miFileSaveAs'
+      )
+    end
+    object ActnFileCancel: TKOLAction
+      Caption = 'Без изменений'
+      Accelerator.Key = vkESCAPE
+      OnExecute = ActnFileCancelExecute
+      Links = (
+        'Frm.BtnCancel'
+        'Frm.MnMn.miFileCancel'
+      )
+    end
+    object ActnFileSave: TKOLAction
+      Caption = 'Сохранить'
+      Accelerator.Key = vkENTER
+      OnExecute = ActnFileSaveExecute
+      Links = (
+        'Frm.BtnOk'
+        'Frm.MnMn.miFileSave'
+      )
+    end
+    object ActnEditUndo: TKOLAction
+      Caption = 'Отменить'
+      OnExecute = ActnEditUndoExecute
+      Links = (
+        'Frm.MnMn.miEditCancel'
+      )
+    end
+    object ActnEditCut: TKOLAction
+      Caption = 'Вырезать'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkX
+      OnExecute = ActnEditCutExecute
+      Links = (
+        'Frm.MnMn.miEditCut'
+      )
+    end
+    object ActnEditCopy: TKOLAction
+      Caption = 'Копировать'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkC
+      OnExecute = ActnEditCopyExecute
+      Links = (
+        'Frm.MnMn.miEditCopy'
+      )
+    end
+    object ActnEditPaste: TKOLAction
+      Caption = 'Вставить'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkV
+      OnExecute = ActnEditPasteExecute
+      Links = (
+        'Frm.MnMn.miEditPaste'
+      )
+    end
+    object ActnEditDelete: TKOLAction
+      Caption = 'Удалить'
+      OnExecute = ActnEditDeleteExecute
+      Links = (
+        'Frm.MnMn.miEditDelete'
+      )
+    end
+    object ActnEditSelectAll: TKOLAction
+      Caption = 'Выделить все'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkA
+      OnExecute = ActnEditSelectAllExecute
+      Links = (
+        'Frm.MnMn.miEditSelectAll'
+      )
+    end
+    object ActnEditSelectStrings: TKOLAction
+      Caption = 'Выделить строки'
+    end
+    object ActnFormatFont: TKOLAction
+      Caption = 'Шрифт...'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkF
+      OnExecute = ActnFormatFontExecute
+      Links = (
+        'Frm.MnMn.miFormatFont'
+      )
+    end
+    object ActnFormatStack: TKOLAction
+      Caption = 'Двухэтажный текст...'
+      OnExecute = ActnFormatStackExecute
+      Links = (
+        'Frm.MnMn.miFormatStackText'
+      )
+    end
+    object ActnFormatWidth: TKOLAction
+      Caption = 'Ширина символа...'
+      OnExecute = ActnFormatWidthExecute
+      Links = (
+        'Frm.MnMn.miFormatWidthFactor'
+      )
+    end
+    object ActnFormatFree: TKOLAction
+      Caption = 'Очистить отформатирования'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkDELETE
+      OnExecute = ActnFormatFreeExecute
+      Links = (
+        'Frm.MnMn.miFormatFree'
+      )
+    end
+    object ActnFormatColor: TKOLAction
+      Caption = 'Цвет...'
+      OnExecute = ActnFormatColorExecute
+      Links = (
+        'Frm.MnMn.miFormatColor'
+      )
+    end
+    object ActnFormatOblique: TKOLAction
+      Caption = 'Наклон...'
+      OnExecute = ActnFormatObliqueExecute
+      Links = (
+        'Frm.MnMn.miFormatOblique'
+      )
+    end
+    object ActnFormatSpace: TKOLAction
+      Caption = 'Межсимвольный промежуток...'
+      OnExecute = ActnFormatSpaceExecute
+      Links = (
+        'Frm.MnMn.miFormatCharSpace'
+      )
+    end
+    object ActnFormatAlignment: TKOLAction
+      Caption = 'Выравнивание...'
+      OnExecute = ActnFormatAlignmentExecute
+      Links = (
+        'Frm.MnMn.miFormatAlignment'
+      )
+    end
+    object ActnFormatHeight: TKOLAction
+      Caption = 'Высота...'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkH
+      Links = (
+        'Frm.MnMn.miFormatHeight'
+      )
+    end
+    object ActnFormatUnderline: TKOLAction
+      Caption = 'Подчеркивание...'
+      OnExecute = ActnFormatUnderlineExecute
+      Links = (
+        'Frm.MnMn.miFormatUnderline'
+      )
+    end
+    object ActnFormatOverline: TKOLAction
+      Caption = 'Надчеркивание...'
+      OnExecute = ActnFormatOverlineExecute
+      Links = (
+        'Frm.MnMn.miFormatOverline'
+      )
+    end
+    object ActnSymbolsNonBreakSpace: TKOLAction
+      Caption = 'Неразрывной пробел'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkSPACE
+      OnExecute = ActnSymbolsNonBreakSpaceExecute
+      Links = (
+        'Frm.MnMn.miSymbolsNonBreakSpace'
+      )
+    end
+    object ActnSymbolsBackSlash: TKOLAction
+      Caption = 'Обратная дробь  \'
+      OnExecute = ActnSymbolsBackSlashExecute
+      Links = (
+        'Frm.MnMn.miSymbolsBackSlash'
+      )
+    end
+    object ActnSymbolsOpnBrace: TKOLAction
+      Caption = 'Открывающая фигурная скобка  {'
+      OnExecute = ActnSymbolsOpnBraceExecute
+      Links = (
+        'Frm.MnMn.miSymbolsOpenBrace'
+      )
+    end
+    object ActnSymbolsCloseBrace: TKOLAction
+      Caption = 'Закрывающая фигурная скобка   }'
+      OnExecute = ActnSymbolsCloseBraceExecute
+      Links = (
+        'Frm.MnMn.miSymbolsCloseBrace'
+      )
+    end
+    object ActnSymbolsParEnd: TKOLAction
+      Caption = 'Конец абзаца'
+      Accelerator.Prefix = [kapShift, kapControl]
+      Accelerator.Key = vkENTER
+      OnExecute = ActnSymbolsParEndExecute
+      Links = (
+        'Frm.MnMn.miSymbolsParagEnd'
+      )
+    end
+    object ActnSymbolsDegrees: TKOLAction
+      Caption = 'Градус  °'
+      Accelerator.Prefix = [kapShift, kapControl]
+      Accelerator.Key = vkD
+      OnExecute = ActnSymbolsDegreesExecute
+      Links = (
+        'Frm.MnMn.miSymbolsDegrees'
+      )
+    end
+    object ActnSymbolsTolerance: TKOLAction
+      Caption = 'Погрешность  ±'
+      Accelerator.Prefix = [kapShift, kapControl]
+      Accelerator.Key = vkP
+      OnExecute = ActnSymbolsToleranceExecute
+      Links = (
+        'Frm.MnMn.miSymbolsTolerance'
+      )
+    end
+    object ActnSymbolsDiameter: TKOLAction
+      Caption = 'Диаметр  '
+      Accelerator.Prefix = [kapShift, kapControl]
+      Accelerator.Key = vkC
+      OnExecute = ActnSymbolsDiameterExecute
+      Links = (
+        'Frm.MnMn.miSymbolsDiameter'
+      )
+    end
+    object ActnSymbolsUnicode: TKOLAction
+      Caption = 'Вставка уникода...'
+      Accelerator.Prefix = [kapControl]
+      Accelerator.Key = vkU
+      OnExecute = ActnSymbolsUnicodeExecute
+      Links = (
+        'Frm.MnMn.miSymbolsUnicode'
+      )
+    end
+    object ActnToolsOptions: TKOLAction
+      Caption = 'Настройки...'
+      OnExecute = ActnToolsOptionsExecute
+      Links = (
+        'Frm.MnMn.miToolsOpions'
+      )
+    end
+  end
+  object MnMn: TKOLMainMenu
+    showShortcuts = False
+    left = 64
+    top = 96
+    ItemCount = 6
+    Item0Name = 'miFile'
+    Item0Caption = 'Файл'
+    Item0Enabled = True
+    Item0Visible = True
+    Item0Checked = False
+    Item0RadioGroup = 0
+    Item0Separator = False
+    Item0Accelerator = 0
+    Item0Bitmap = (    )
+    Item0SubItemCount = 5
+    Item0WindowMenu = False
+    Item0SubItem0Name = 'miFileSave'
+    Item0SubItem0Caption = 'Сохранить'#9'Enter'
+    Item0SubItem0Enabled = True
+    Item0SubItem0Visible = True
+    Item0SubItem0Checked = False
+    Item0SubItem0RadioGroup = 0
+    Item0SubItem0Separator = False
+    Item0SubItem0Accelerator = 0
+    Item0SubItem0Bitmap = (    )
+    Item0SubItem0SubItemCount = 0
+    Item0SubItem0WindowMenu = False
+    Item0SubItem1Name = 'miFileSaveAs'
+    Item0SubItem1Caption = 'Сохранить как...'#9'Ctrl+S'
+    Item0SubItem1Enabled = True
+    Item0SubItem1Visible = True
+    Item0SubItem1Checked = False
+    Item0SubItem1RadioGroup = 0
+    Item0SubItem1Separator = False
+    Item0SubItem1Accelerator = 0
+    Item0SubItem1Bitmap = (    )
+    Item0SubItem1SubItemCount = 0
+    Item0SubItem1WindowMenu = False
+    Item0SubItem2Name = 'miFileInsertFrom'
+    Item0SubItem2Caption = 'Вставить из...'#9'Ctrl+O'
+    Item0SubItem2Enabled = True
+    Item0SubItem2Visible = True
+    Item0SubItem2Checked = False
+    Item0SubItem2RadioGroup = 0
+    Item0SubItem2Separator = False
+    Item0SubItem2Accelerator = 0
+    Item0SubItem2Bitmap = (    )
+    Item0SubItem2SubItemCount = 0
+    Item0SubItem2WindowMenu = False
+    Item0SubItem3Name = 'miFile1'
+    Item0SubItem3Enabled = True
+    Item0SubItem3Visible = True
+    Item0SubItem3Checked = False
+    Item0SubItem3RadioGroup = 0
+    Item0SubItem3Separator = True
+    Item0SubItem3Accelerator = 0
+    Item0SubItem3Bitmap = (    )
+    Item0SubItem3SubItemCount = 0
+    Item0SubItem3WindowMenu = False
+    Item0SubItem4Name = 'miFileCancel'
+    Item0SubItem4Caption = 'Без изменений'#9'Escape'
+    Item0SubItem4Enabled = True
+    Item0SubItem4Visible = True
+    Item0SubItem4Checked = False
+    Item0SubItem4RadioGroup = 0
+    Item0SubItem4Separator = False
+    Item0SubItem4Accelerator = 0
+    Item0SubItem4Bitmap = (    )
+    Item0SubItem4SubItemCount = 0
+    Item0SubItem4WindowMenu = False
+    Item1Name = 'miEdit'
+    Item1Caption = 'Правка'
+    Item1Enabled = True
+    Item1Visible = True
+    Item1Checked = False
+    Item1RadioGroup = 0
+    Item1Separator = False
+    Item1Accelerator = 0
+    Item1Bitmap = (    )
+    Item1OnMenu = 'miEditMenu'
+    Item1SubItemCount = 8
+    Item1WindowMenu = False
+    Item1SubItem0Name = 'miEditCancel'
+    Item1SubItem0Caption = 'Отменить'
+    Item1SubItem0Enabled = True
+    Item1SubItem0Visible = True
+    Item1SubItem0Checked = False
+    Item1SubItem0RadioGroup = 0
+    Item1SubItem0Separator = False
+    Item1SubItem0Accelerator = 0
+    Item1SubItem0Bitmap = (    )
+    Item1SubItem0SubItemCount = 0
+    Item1SubItem0WindowMenu = False
+    Item1SubItem1Name = 'miEdit1'
+    Item1SubItem1Enabled = True
+    Item1SubItem1Visible = True
+    Item1SubItem1Checked = False
+    Item1SubItem1RadioGroup = 0
+    Item1SubItem1Separator = True
+    Item1SubItem1Accelerator = 0
+    Item1SubItem1Bitmap = (    )
+    Item1SubItem1SubItemCount = 0
+    Item1SubItem1WindowMenu = False
+    Item1SubItem2Name = 'miEditCut'
+    Item1SubItem2Caption = 'Вырезать'#9'Ctrl+X'
+    Item1SubItem2Enabled = True
+    Item1SubItem2Visible = True
+    Item1SubItem2Checked = False
+    Item1SubItem2RadioGroup = 0
+    Item1SubItem2Separator = False
+    Item1SubItem2Accelerator = 0
+    Item1SubItem2Bitmap = (    )
+    Item1SubItem2SubItemCount = 0
+    Item1SubItem2WindowMenu = False
+    Item1SubItem3Name = 'miEditCopy'
+    Item1SubItem3Caption = 'Копировать'#9'Ctrl+C'
+    Item1SubItem3Enabled = True
+    Item1SubItem3Visible = True
+    Item1SubItem3Checked = False
+    Item1SubItem3RadioGroup = 0
+    Item1SubItem3Separator = False
+    Item1SubItem3Accelerator = 0
+    Item1SubItem3Bitmap = (    )
+    Item1SubItem3SubItemCount = 0
+    Item1SubItem3WindowMenu = False
+    Item1SubItem4Name = 'miEditPaste'
+    Item1SubItem4Caption = 'Вставить'#9'Ctrl+V'
+    Item1SubItem4Enabled = True
+    Item1SubItem4Visible = True
+    Item1SubItem4Checked = False
+    Item1SubItem4RadioGroup = 0
+    Item1SubItem4Separator = False
+    Item1SubItem4Accelerator = 0
+    Item1SubItem4Bitmap = (    )
+    Item1SubItem4SubItemCount = 0
+    Item1SubItem4WindowMenu = False
+    Item1SubItem5Name = 'miEditDelete'
+    Item1SubItem5Caption = 'Удалить'
+    Item1SubItem5Enabled = True
+    Item1SubItem5Visible = True
+    Item1SubItem5Checked = False
+    Item1SubItem5RadioGroup = 0
+    Item1SubItem5Separator = False
+    Item1SubItem5Accelerator = 0
+    Item1SubItem5Bitmap = (    )
+    Item1SubItem5SubItemCount = 0
+    Item1SubItem5WindowMenu = False
+    Item1SubItem6Name = 'miEdit2'
+    Item1SubItem6Enabled = True
+    Item1SubItem6Visible = True
+    Item1SubItem6Checked = False
+    Item1SubItem6RadioGroup = 0
+    Item1SubItem6Separator = True
+    Item1SubItem6Accelerator = 0
+    Item1SubItem6Bitmap = (    )
+    Item1SubItem6SubItemCount = 0
+    Item1SubItem6WindowMenu = False
+    Item1SubItem7Name = 'miEditSelectAll'
+    Item1SubItem7Caption = 'Выделить все'#9'Ctrl+A'
+    Item1SubItem7Enabled = True
+    Item1SubItem7Visible = True
+    Item1SubItem7Checked = False
+    Item1SubItem7RadioGroup = 0
+    Item1SubItem7Separator = False
+    Item1SubItem7Accelerator = 0
+    Item1SubItem7Bitmap = (    )
+    Item1SubItem7SubItemCount = 0
+    Item1SubItem7WindowMenu = False
+    Item2Name = 'miFormat'
+    Item2Caption = 'Формат'
+    Item2Enabled = True
+    Item2Visible = True
+    Item2Checked = False
+    Item2RadioGroup = 0
+    Item2Separator = False
+    Item2Accelerator = 0
+    Item2Bitmap = (    )
+    Item2SubItemCount = 12
+    Item2WindowMenu = False
+    Item2SubItem0Name = 'miFormatColor'
+    Item2SubItem0Caption = 'Цвет...'
+    Item2SubItem0Enabled = True
+    Item2SubItem0Visible = True
+    Item2SubItem0Checked = False
+    Item2SubItem0RadioGroup = 0
+    Item2SubItem0Separator = False
+    Item2SubItem0Accelerator = 0
+    Item2SubItem0Bitmap = (    )
+    Item2SubItem0SubItemCount = 0
+    Item2SubItem0WindowMenu = False
+    Item2SubItem1Name = 'miFormatFont'
+    Item2SubItem1Caption = 'Шрифт...'#9'Ctrl+F'
+    Item2SubItem1Enabled = True
+    Item2SubItem1Visible = True
+    Item2SubItem1Checked = False
+    Item2SubItem1RadioGroup = 0
+    Item2SubItem1Separator = False
+    Item2SubItem1Accelerator = 0
+    Item2SubItem1Bitmap = (    )
+    Item2SubItem1SubItemCount = 0
+    Item2SubItem1WindowMenu = False
+    Item2SubItem2Name = 'miFormatHeight'
+    Item2SubItem2Caption = 'Высота...'#9'Ctrl+H'
+    Item2SubItem2Enabled = True
+    Item2SubItem2Visible = True
+    Item2SubItem2Checked = False
+    Item2SubItem2RadioGroup = 0
+    Item2SubItem2Separator = False
+    Item2SubItem2Accelerator = 0
+    Item2SubItem2Bitmap = (    )
+    Item2SubItem2SubItemCount = 0
+    Item2SubItem2WindowMenu = False
+    Item2SubItem3Name = 'miFormatOblique'
+    Item2SubItem3Caption = 'Наклон...'
+    Item2SubItem3Enabled = True
+    Item2SubItem3Visible = True
+    Item2SubItem3Checked = False
+    Item2SubItem3RadioGroup = 0
+    Item2SubItem3Separator = False
+    Item2SubItem3Accelerator = 0
+    Item2SubItem3Bitmap = (    )
+    Item2SubItem3SubItemCount = 0
+    Item2SubItem3WindowMenu = False
+    Item2SubItem4Name = 'miFormatAlignment'
+    Item2SubItem4Caption = 'Выравнивание...'
+    Item2SubItem4Enabled = True
+    Item2SubItem4Visible = True
+    Item2SubItem4Checked = False
+    Item2SubItem4RadioGroup = 0
+    Item2SubItem4Separator = False
+    Item2SubItem4Accelerator = 0
+    Item2SubItem4Bitmap = (    )
+    Item2SubItem4SubItemCount = 0
+    Item2SubItem4WindowMenu = False
+    Item2SubItem5Name = 'miFormatStackText'
+    Item2SubItem5Caption = 'Двухэтажный текст...'
+    Item2SubItem5Enabled = True
+    Item2SubItem5Visible = True
+    Item2SubItem5Checked = False
+    Item2SubItem5RadioGroup = 0
+    Item2SubItem5Separator = False
+    Item2SubItem5Accelerator = 0
+    Item2SubItem5Bitmap = (    )
+    Item2SubItem5SubItemCount = 0
+    Item2SubItem5WindowMenu = False
+    Item2SubItem6Name = 'miFormatOverline'
+    Item2SubItem6Caption = 'Надчеркивание...'
+    Item2SubItem6Enabled = True
+    Item2SubItem6Visible = True
+    Item2SubItem6Checked = False
+    Item2SubItem6RadioGroup = 0
+    Item2SubItem6Separator = False
+    Item2SubItem6Accelerator = 0
+    Item2SubItem6Bitmap = (    )
+    Item2SubItem6SubItemCount = 0
+    Item2SubItem6WindowMenu = False
+    Item2SubItem7Name = 'miFormatUnderline'
+    Item2SubItem7Caption = 'Подчеркивание...'
+    Item2SubItem7Enabled = True
+    Item2SubItem7Visible = True
+    Item2SubItem7Checked = False
+    Item2SubItem7RadioGroup = 0
+    Item2SubItem7Separator = False
+    Item2SubItem7Accelerator = 0
+    Item2SubItem7Bitmap = (    )
+    Item2SubItem7SubItemCount = 0
+    Item2SubItem7WindowMenu = False
+    Item2SubItem8Name = 'miFormatWidthFactor'
+    Item2SubItem8Caption = 'Ширина символа...'
+    Item2SubItem8Enabled = True
+    Item2SubItem8Visible = True
+    Item2SubItem8Checked = False
+    Item2SubItem8RadioGroup = 0
+    Item2SubItem8Separator = False
+    Item2SubItem8Accelerator = 0
+    Item2SubItem8Bitmap = (    )
+    Item2SubItem8SubItemCount = 0
+    Item2SubItem8WindowMenu = False
+    Item2SubItem9Name = 'miFormatCharSpace'
+    Item2SubItem9Caption = 'Межсимвольный промежуток...'
+    Item2SubItem9Enabled = True
+    Item2SubItem9Visible = True
+    Item2SubItem9Checked = False
+    Item2SubItem9RadioGroup = 0
+    Item2SubItem9Separator = False
+    Item2SubItem9Accelerator = 0
+    Item2SubItem9Bitmap = (    )
+    Item2SubItem9SubItemCount = 0
+    Item2SubItem9WindowMenu = False
+    Item2SubItem10Name = 'miFormat1'
+    Item2SubItem10Enabled = True
+    Item2SubItem10Visible = True
+    Item2SubItem10Checked = False
+    Item2SubItem10RadioGroup = 0
+    Item2SubItem10Separator = True
+    Item2SubItem10Accelerator = 0
+    Item2SubItem10Bitmap = (    )
+    Item2SubItem10SubItemCount = 0
+    Item2SubItem10WindowMenu = False
+    Item2SubItem11Name = 'miFormatFree'
+    Item2SubItem11Caption = 'Очистить отформатирования'#9'Ctrl+Delete'
+    Item2SubItem11Enabled = True
+    Item2SubItem11Visible = True
+    Item2SubItem11Checked = False
+    Item2SubItem11RadioGroup = 0
+    Item2SubItem11Separator = False
+    Item2SubItem11Accelerator = 0
+    Item2SubItem11Bitmap = (    )
+    Item2SubItem11SubItemCount = 0
+    Item2SubItem11WindowMenu = False
+    Item3Name = 'miSymbols'
+    Item3Caption = 'Символы'
+    Item3Enabled = True
+    Item3Visible = True
+    Item3Checked = False
+    Item3RadioGroup = 0
+    Item3Separator = False
+    Item3Accelerator = 0
+    Item3Bitmap = (    )
+    Item3OnMenu = 'miSymbolsMenu'
+    Item3SubItemCount = 11
+    Item3WindowMenu = False
+    Item3SubItem0Name = 'miSymbolsNonBreakSpace'
+    Item3SubItem0Caption = 'Неразрывной пробел'#9'Ctrl+Space'
+    Item3SubItem0Enabled = True
+    Item3SubItem0Visible = True
+    Item3SubItem0Checked = False
+    Item3SubItem0RadioGroup = 0
+    Item3SubItem0Separator = False
+    Item3SubItem0Accelerator = 0
+    Item3SubItem0Bitmap = (    )
+    Item3SubItem0SubItemCount = 0
+    Item3SubItem0WindowMenu = False
+    Item3SubItem1Name = 'miSymbolsOpenBrace'
+    Item3SubItem1Caption = 'Открывающая фигурная скобка  {'
+    Item3SubItem1Enabled = True
+    Item3SubItem1Visible = True
+    Item3SubItem1Checked = False
+    Item3SubItem1RadioGroup = 0
+    Item3SubItem1Separator = False
+    Item3SubItem1Accelerator = 0
+    Item3SubItem1Bitmap = (    )
+    Item3SubItem1SubItemCount = 0
+    Item3SubItem1WindowMenu = False
+    Item3SubItem2Name = 'miSymbolsBackSlash'
+    Item3SubItem2Caption = 'Обратная дробь  \'
+    Item3SubItem2Enabled = True
+    Item3SubItem2Visible = True
+    Item3SubItem2Checked = False
+    Item3SubItem2RadioGroup = 0
+    Item3SubItem2Separator = False
+    Item3SubItem2Accelerator = 0
+    Item3SubItem2Bitmap = (    )
+    Item3SubItem2SubItemCount = 0
+    Item3SubItem2WindowMenu = False
+    Item3SubItem3Name = 'miSymbolsCloseBrace'
+    Item3SubItem3Caption = 'Закрывающая фигурная скобка   }'
+    Item3SubItem3Enabled = True
+    Item3SubItem3Visible = True
+    Item3SubItem3Checked = False
+    Item3SubItem3RadioGroup = 0
+    Item3SubItem3Separator = False
+    Item3SubItem3Accelerator = 0
+    Item3SubItem3Bitmap = (    )
+    Item3SubItem3SubItemCount = 0
+    Item3SubItem3WindowMenu = False
+    Item3SubItem4Name = 'miSymbolsParagEnd'
+    Item3SubItem4Caption = 'Конец абзаца'#9'Ctrl+Shift+Enter'
+    Item3SubItem4Enabled = True
+    Item3SubItem4Visible = True
+    Item3SubItem4Checked = False
+    Item3SubItem4RadioGroup = 0
+    Item3SubItem4Separator = False
+    Item3SubItem4Accelerator = 0
+    Item3SubItem4Bitmap = (    )
+    Item3SubItem4SubItemCount = 0
+    Item3SubItem4WindowMenu = False
+    Item3SubItem5Name = 'miSymbols1'
+    Item3SubItem5Enabled = True
+    Item3SubItem5Visible = True
+    Item3SubItem5Checked = False
+    Item3SubItem5RadioGroup = 0
+    Item3SubItem5Separator = True
+    Item3SubItem5Accelerator = 0
+    Item3SubItem5Bitmap = (    )
+    Item3SubItem5SubItemCount = 0
+    Item3SubItem5WindowMenu = False
+    Item3SubItem6Name = 'miSymbolsDegrees'
+    Item3SubItem6Caption = 'Градус  °'#9'Ctrl+Shift+D'
+    Item3SubItem6Enabled = True
+    Item3SubItem6Visible = True
+    Item3SubItem6Checked = False
+    Item3SubItem6RadioGroup = 0
+    Item3SubItem6Separator = False
+    Item3SubItem6Accelerator = 0
+    Item3SubItem6Bitmap = (    )
+    Item3SubItem6SubItemCount = 0
+    Item3SubItem6WindowMenu = False
+    Item3SubItem7Name = 'miSymbolsTolerance'
+    Item3SubItem7Caption = 'Погрешность  ±'#9'Ctrl+Shift+P'
+    Item3SubItem7Enabled = True
+    Item3SubItem7Visible = True
+    Item3SubItem7Checked = False
+    Item3SubItem7RadioGroup = 0
+    Item3SubItem7Separator = False
+    Item3SubItem7Accelerator = 0
+    Item3SubItem7Bitmap = (    )
+    Item3SubItem7SubItemCount = 0
+    Item3SubItem7WindowMenu = False
+    Item3SubItem8Name = 'miSymbolsDiameter'
+    Item3SubItem8Caption = 'Диаметр  '#9'Ctrl+Shift+C'
+    Item3SubItem8Enabled = True
+    Item3SubItem8Visible = True
+    Item3SubItem8Checked = False
+    Item3SubItem8RadioGroup = 0
+    Item3SubItem8Separator = False
+    Item3SubItem8Accelerator = 0
+    Item3SubItem8Bitmap = (    )
+    Item3SubItem8SubItemCount = 0
+    Item3SubItem8WindowMenu = False
+    Item3SubItem9Name = 'miSymbols2'
+    Item3SubItem9Enabled = True
+    Item3SubItem9Visible = True
+    Item3SubItem9Checked = False
+    Item3SubItem9RadioGroup = 0
+    Item3SubItem9Separator = True
+    Item3SubItem9Accelerator = 0
+    Item3SubItem9Bitmap = (    )
+    Item3SubItem9SubItemCount = 0
+    Item3SubItem9WindowMenu = False
+    Item3SubItem10Name = 'miSymbolsUnicode'
+    Item3SubItem10Caption = 'Вставка уникода...'#9'Ctrl+U'
+    Item3SubItem10Enabled = True
+    Item3SubItem10Visible = True
+    Item3SubItem10Checked = False
+    Item3SubItem10RadioGroup = 0
+    Item3SubItem10Separator = False
+    Item3SubItem10Accelerator = 0
+    Item3SubItem10Bitmap = (    )
+    Item3SubItem10SubItemCount = 0
+    Item3SubItem10WindowMenu = False
+    Item4Name = 'miTools'
+    Item4Caption = 'Инструменты'
+    Item4Enabled = True
+    Item4Visible = True
+    Item4Checked = False
+    Item4RadioGroup = 0
+    Item4Separator = False
+    Item4Accelerator = 0
+    Item4Bitmap = (    )
+    Item4SubItemCount = 1
+    Item4WindowMenu = False
+    Item4SubItem0Name = 'miToolsOpions'
+    Item4SubItem0Caption = 'Настройки...'
+    Item4SubItem0Enabled = True
+    Item4SubItem0Visible = True
+    Item4SubItem0Checked = False
+    Item4SubItem0RadioGroup = 0
+    Item4SubItem0Separator = False
+    Item4SubItem0Accelerator = 0
+    Item4SubItem0Bitmap = (    )
+    Item4SubItem0SubItemCount = 0
+    Item4SubItem0WindowMenu = False
+    Item5Name = 'miHelp'
+    Item5Caption = 'Помощь'
+    Item5Enabled = True
+    Item5Visible = True
+    Item5Checked = False
+    Item5RadioGroup = 0
+    Item5Separator = False
+    Item5Accelerator = 0
+    Item5Bitmap = (    )
+    Item5OnMenu = 'miHelpMenu'
+    Item5SubItemCount = 1
+    Item5WindowMenu = False
+    Item5SubItem0Name = 'N1'
+    Item5SubItem0Enabled = True
+    Item5SubItem0Visible = True
+    Item5SubItem0Checked = False
+    Item5SubItem0RadioGroup = 0
+    Item5SubItem0Separator = False
+    Item5SubItem0Accelerator = 0
+    Item5SubItem0Bitmap = (    )
+    Item5SubItem0OnMenu = 'N1Menu'
+    Item5SubItem0SubItemCount = 0
+    Item5SubItem0WindowMenu = False
+  end
+  object PppMn: TKOLPopupMenu
+    left = 96
+    top = 96
+    ItemCount = 0
+  end
+  object SvDlgTextSaveAs: TKOLOpenSaveDialog
+    Options = [OSHideReadonly, OSOverwritePrompt, OSPathMustExist]
+    Title = 'Сохранить текст как...'
+    Filter = 'Простой текст (*.txt)|*.txt|Все файлы (*.*)|*.*'
+    DefExtension = 'txt'
+    OpenDialog = False
+    left = 35
+    top = 144
+  end
+  object OpnDlgText: TKOLOpenSaveDialog
+    Title = 'Открыть текст из файла...'
+    Filter = 'Простой текст (*.txt)|*.txt|Все файлы (*.*)|*.*'
+    DefExtension = 'txt'
+    left = 64
+    top = 144
+  end
+end

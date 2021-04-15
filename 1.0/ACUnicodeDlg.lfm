@@ -1,0 +1,183 @@
+object ACUnicodeDialog: TACUnicodeDialog
+  Left = 286
+  Height = 405
+  Hint = 'Задайте символ, содержащийся в выбранном шрифте SHX'
+  Top = 135
+  Width = 447
+  HorzScrollBar.Page = 446
+  VertScrollBar.Page = 404
+  ActiveControl = OKBtn
+  BorderStyle = bsDialog
+  Caption = 'Вставить символ'
+  ClientHeight = 405
+  ClientWidth = 447
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  ShowHint = True
+  object Image: TImage
+    Left = 360
+    Height = 73
+    Hint = 'Предварительный просмотр выбранного символа'
+    Top = 8
+    Width = 75
+    Anchors = [akTop, akRight]
+    Transparent = False
+  end
+  object OKBtn: TButton
+    Left = 12
+    Height = 25
+    Top = 467
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object CancelBtn: TButton
+    Left = 92
+    Height = 25
+    Top = 467
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object GroupBox: TGroupBox
+    Left = 8
+    Height = 78
+    Top = 3
+    Width = 336
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Закладки'
+    ClientHeight = 60
+    ClientWidth = 332
+    TabOrder = 2
+    object BtnAdd: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Добавить закладку'
+      Top = 5
+      Width = 89
+      Caption = 'Добавить'
+      Enabled = False
+      OnClick = BtnAddClick
+      TabOrder = 0
+    end
+    object BtnDelete: TButton
+      Left = 104
+      Height = 25
+      Hint = 'Удалить закладку'
+      Top = 5
+      Width = 89
+      Caption = 'Удалить'
+      OnClick = BtnDeleteClick
+      TabOrder = 1
+    end
+    object CmbBxBookmark: TComboBox
+      Left = 8
+      Height = 21
+      Hint = 'Список закладок для выбранного шрифта'
+      Top = 37
+      Width = 316
+      Anchors = [akTop, akLeft, akRight]
+      AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 13
+      OnChange = CmbBxBookmarkChange
+      OnEnter = CmbBxBookmarkEnter
+      OnKeyDown = CmbBxBookmarkKeyDown
+      OnSelect = CmbBxBookmarkSelect
+      Sorted = True
+      TabOrder = 2
+    end
+  end
+  object GrpBxCode: TGroupBox
+    Left = 8
+    Height = 375
+    Top = 88
+    Width = 442
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ClientHeight = 357
+    ClientWidth = 438
+    TabOrder = 3
+    object LblCode10: TLabel
+      Left = 11
+      Height = 13
+      Top = 10
+      Width = 65
+      AutoSize = False
+      Caption = 'Код (10)'
+      ParentColor = False
+    end
+    object LblCode16: TLabel
+      Left = 83
+      Height = 13
+      Top = 10
+      Width = 65
+      AutoSize = False
+      Caption = 'Код (16)'
+      ParentColor = False
+    end
+    object LblFont: TLabel
+      Left = 157
+      Height = 14
+      Top = 50
+      Width = 37
+      Caption = 'Шрифт'
+      ParentColor = False
+    end
+    object EdtCode10: TEdit
+      Left = 6
+      Height = 21
+      Hint = 'Код символа в десятичной системе'
+      Top = 24
+      Width = 65
+      OnChange = EdtCode10Change
+      OnKeyPress = EdtCode10KeyPress
+      TabOrder = 0
+    end
+    object ListBox: TListBox
+      Left = 6
+      Height = 226
+      Top = 46
+      Width = 422
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ExtendedSelect = False
+      ItemHeight = 13
+      OnClick = ListBoxClick
+      OnDblClick = ListBoxDblClick
+      TabOrder = 1
+    end
+    object EdtCode16: TEdit
+      Left = 78
+      Height = 21
+      Hint = 'Код символа в шестнадцатеричной системе'
+      Top = 24
+      Width = 65
+      OnKeyPress = EdtCode16KeyPress
+      TabOrder = 2
+    end
+    object ChckBxFontInfo: TCheckBox
+      Left = 9
+      Height = 19
+      Hint = 'Если стоит галка - то код символа вставится в текст вместе с названием выбранного шрифта'
+      Top = -8
+      Width = 183
+      Caption = 'Вставить с названием шрифта'
+      TabOrder = 3
+    end
+  end
+  object BtnTable: TButton
+    Left = 360
+    Height = 25
+    Hint = 'Показать таблицу символов'
+    Top = 376
+    Width = 75
+    Caption = 'Таблица...'
+    OnClick = BtnTableClick
+    TabOrder = 4
+  end
+end

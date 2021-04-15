@@ -1,0 +1,63 @@
+object ACAlignmentDialog: TACAlignmentDialog
+  Left = 495
+  Height = 121
+  Hint = '¬ыравнивание символов по вертикали относительно строк'
+  Top = 275
+  Width = 193
+  HorzScrollBar.Page = 192
+  VertScrollBar.Page = 120
+  ActiveControl = RadioGroup
+  BorderStyle = bsDialog
+  Caption = '¬ыравнивание'
+  ClientHeight = 121
+  ClientWidth = 193
+  OnCreate = FormCreate
+  ParentFont = True
+  Position = poScreenCenter
+  ShowHint = True
+  object OKBtn: TButton
+    Left = 19
+    Height = 25
+    Top = 90
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object CancelBtn: TButton
+    Left = 99
+    Height = 25
+    Top = 90
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object RadioGroup: TRadioGroup
+    Left = 5
+    Height = 73
+    Top = 8
+    Width = 186
+    AutoFill = True
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 55
+    ClientWidth = 182
+    Items.Strings = (
+      'по нижней части'
+      'по центру'
+      'по верхней части'
+    )
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+  end
+end

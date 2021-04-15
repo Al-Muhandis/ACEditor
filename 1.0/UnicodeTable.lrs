@@ -1,0 +1,22 @@
+LazarusResources.Add('TFrmUnicodeTable','FORMDATA',[
+  'TPF0'#16'TFrmUnicodeTable'#15'FrmUnicodeTable'#4'Left'#3#162#1#3'Top'#2'o'#5
+  +'Width'#3'0'#2#6'Height'#3#228#1#7'Caption'#18#16#0#0#0'"'#4'0'#4'1'#4';'#4
+  +'8'#4'F'#4'0'#4' '#0'A'#4'8'#4'<'#4'2'#4'>'#4';'#4'>'#4'2'#4#5'Color'#7#9'cl'
+  +'BtnFace'#12'Font.Charset'#7#15'DEFAULT_CHARSET'#10'Font.Color'#7#12'clWindo'
+  +'wText'#11'Font.Height'#2#245#9'Font.Name'#6#13'MS Sans Serif'#10'Font.Style'
+  +#11#0#7'OnClose'#7#9'FormClose'#8'OnCreate'#7#10'FormCreate'#8'OnResize'#7#10
+  +'FormResize'#13'PixelsPerInch'#2'`'#10'TextHeight'#2#13#0#10'TStatusBar'#9'S'
+  +'tatusBar'#4'Left'#2#0#3'Top'#3#175#1#5'Width'#3'('#2#6'Height'#2#19#6'Panel'
+  +'s'#14#1#5'Width'#2'P'#0#1#5'Width'#2'P'#0#1#5'Width'#2'2'#0#0#0#0#9'TDrawGr'
+  +'id'#6'DrwGrd'#4'Left'#2#0#3'Top'#2#0#5'Width'#3'('#2#6'Height'#3#142#1#5'Al'
+  +'ign'#7#8'alClient'#8'ColCount'#2#1#15'DefaultColWidth'#2'2'#16'DefaultRowHe'
+  +'ight'#2'2'#14'DefaultDrawing'#8#9'FixedCols'#2#0#8'RowCount'#2#1#9'FixedRow'
+  +'s'#2#0#7'Options'#11#10'goVertLine'#10'goHorzLine'#15'goThumbTracking'#0#10
+  +'ScrollBars'#7#10'ssVertical'#8'TabOrder'#2#1#10'OnDrawCell'#7#14'DrwGrdDraw'
+  +'Cell'#12'OnSelectCell'#7#16'DrwGrdSelectCell'#0#0#6'TPanel'#10'PnlButtons'#4
+  +'Left'#2#0#3'Top'#3#142#1#5'Width'#3'('#2#6'Height'#2'!'#5'Align'#7#8'alBott'
+  +'om'#10'BevelOuter'#7#6'bvNone'#8'TabOrder'#2#2#0#7'TButton'#8'BtnClose'#4'L'
+  +'eft'#3#199#1#3'Top'#2#5#5'Width'#2'K'#6'Height'#2#25#7'Anchors'#11#7'akRigh'
+  +'t'#8'akBottom'#0#7'Caption'#18#7#0#0#0#23#4'0'#4':'#4'@'#4'K'#4'B'#4'L'#4#8
+  +'TabOrder'#2#0#7'OnClick'#7#13'BtnCloseClick'#0#0#0#0
+]);

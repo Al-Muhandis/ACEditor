@@ -1,0 +1,31 @@
+LazarusResources.Add('TACStackDialog','FORMDATA',[
+  'TPF0'#14'TACStackDialog'#13'ACStackDialog'#4'Left'#3#238#0#6'Height'#3#142#0
+  +#4'Hint'#6'W'#199#224#228#224#233#242#229' '#228#226#243#245#243#240#238#226
+  +#237#229#226#251#233' '#242#229#234#241#242' ('#227#238#240#232#231#238#237
+  +#242#224#235#252#237#224#255' '#232#235#232' '#234#238#241#224#255' '#228#240
+  +#238#225#252', '#226#229#240#245#237#232#233' '#232#235#232' '#237#232#230
+  +#237#232#233' '#232#237#228#229#234#241')'#3'Top'#3#138#0#5'Width'#3#180#0#18
+  +'HorzScrollBar.Page'#3#179#0#18'VertScrollBar.Page'#3#141#0#13'ActiveControl'
+  +#7#8'ComboBox'#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#17'2-'#243#240#238
+  +#226#237#229#226#251#233' '#242#229#234#241#242#12'ClientHeight'#3#142#0#11
+  +'ClientWidth'#3#180#0#11'Font.Height'#2#245#9'Font.Name'#6#13'MS Sans Serif'
+  +#8'OnCreate'#7#10'FormCreate'#8'Position'#7#14'poScreenCenter'#8'ShowHint'#9
+  +#0#6'TBevel'#5'Bevel'#4'Left'#2#8#6'Height'#2']'#3'Top'#2#8#5'Width'#3#163#0
+  +#5'Shape'#7#7'bsFrame'#0#0#7'TButton'#5'OKBtn'#4'Left'#2#9#6'Height'#2#25#3
+  +'Top'#2'n'#5'Width'#2'K'#7'Caption'#6#2'OK'#7'Default'#9#11'ModalResult'#2#1
+  +#8'TabOrder'#2#3#0#0#7'TButton'#9'CancelBtn'#4'Left'#2'Y'#6'Height'#2#25#3'T'
+  +'op'#2'n'#5'Width'#2'K'#6'Cancel'#9#7'Caption'#6#6'Cancel'#11'ModalResult'#2
+  +#2#8'TabOrder'#2#4#0#0#5'TEdit'#8'EditHigh'#4'Left'#2#15#6'Height'#2#21#4'Hi'
+  +'nt'#6#12#210#229#234#241#242' '#241#226#229#240#245#243#3'Top'#2#15#5'Width'
+  +#2'y'#8'TabOrder'#2#1#0#0#5'TEdit'#7'EditLow'#4'Left'#2#15#6'Height'#2#21#4
+  +'Hint'#6#11#210#229#234#241#242' '#241#237#232#231#243#3'Top'#2'('#5'Width'#2
+  +'y'#8'TabOrder'#2#2#0#0#9'TComboBox'#8'ComboBox'#4'Left'#2#15#6'Height'#2#21
+  +#4'Hint'#6#25#210#232#239' '#228#226#243#245#243#240#238#226#237#229#226#238
+  +#227#238' '#242#229#234#241#242#224#3'Top'#2'K'#5'Width'#3#146#0#16'AutoComp'
+  +'leteText'#11#22'cbactEndOfLineComplete'#20'cbactSearchAscending'#0#10'ItemH'
+  +'eight'#2#13#13'Items.Strings'#1#6#20#195#238#240#232#231#238#237#242#224#235
+  +#252#237#224#255' '#228#240#238#225#252#6#11#202#238#241#224#255' '#228#240
+  +#238#225#252#6#21#194#229#240#245#237#232#233'/'#237#232#230#237#232#233' '
+  +#232#237#228#229#234#241#0#5'Style'#7#14'csDropDownList'#8'TabOrder'#2#0#0#0
+  +#0
+]);

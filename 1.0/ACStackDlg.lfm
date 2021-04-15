@@ -1,0 +1,78 @@
+object ACStackDialog: TACStackDialog
+  Left = 238
+  Height = 142
+  Hint = 'Задайте двухуровневый текст (горизонтальная или косая дробь, верхний или нижний индекс)'
+  Top = 138
+  Width = 180
+  HorzScrollBar.Page = 179
+  VertScrollBar.Page = 141
+  ActiveControl = ComboBox
+  BorderStyle = bsDialog
+  Caption = '2-уровневый текст'
+  ClientHeight = 142
+  ClientWidth = 180
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowHint = True
+  object Bevel: TBevel
+    Left = 8
+    Height = 93
+    Top = 8
+    Width = 163
+    Shape = bsFrame
+  end
+  object OKBtn: TButton
+    Left = 9
+    Height = 25
+    Top = 110
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 3
+  end
+  object CancelBtn: TButton
+    Left = 89
+    Height = 25
+    Top = 110
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 4
+  end
+  object EditHigh: TEdit
+    Left = 15
+    Height = 21
+    Hint = 'Текст сверху'
+    Top = 15
+    Width = 121
+    TabOrder = 1
+  end
+  object EditLow: TEdit
+    Left = 15
+    Height = 21
+    Hint = 'Текст снизу'
+    Top = 40
+    Width = 121
+    TabOrder = 2
+  end
+  object ComboBox: TComboBox
+    Left = 15
+    Height = 21
+    Hint = 'Тип двухуровневого текста'
+    Top = 75
+    Width = 146
+    AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+    ItemHeight = 13
+    Items.Strings = (
+      'Горизонтальная дробь'
+      'Косая дробь'
+      'Верхний/нижний индекс'
+    )
+    Style = csDropDownList
+    TabOrder = 0
+  end
+end

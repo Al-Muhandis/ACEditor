@@ -1,0 +1,57 @@
+object ACFontDialog: TACFontDialog
+  Left = 191
+  Height = 240
+  Hint = 'Шрифт текста в ACAD''е'
+  Top = 204
+  Width = 320
+  HorzScrollBar.Page = 319
+  VertScrollBar.Page = 239
+  ActiveControl = OKBtn
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Выбрать шрифт'
+  ClientHeight = 240
+  ClientWidth = 320
+  ParentFont = True
+  Position = poScreenCenter
+  ShowHint = True
+  object Bevel: TBevel
+    Left = 8
+    Height = 65
+    Top = 8
+    Width = 201
+    Shape = bsFrame
+  end
+  object OKBtn: TButton
+    Left = 215
+    Height = 25
+    Top = 12
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object CancelBtn: TButton
+    Left = 215
+    Height = 25
+    Top = 40
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 1
+  end
+  object CheckBox: TCheckBox
+    Left = 16
+    Height = 19
+    Hint = 'Если стоит галочка - в списке содержатся только векторные шрифты ACAD''а (*.SHX)'
+    Top = 48
+    Width = 233
+    Caption = 'Только шрифты AutoCAD'
+    Checked = True
+    OnClick = CheckBoxClick
+    State = cbChecked
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,74 @@
+object ACHeightDialog: TACHeightDialog
+  Left = 302
+  Height = 240
+  Hint = 'Задает высоту шрифта в ACAD''е'
+  Top = 214
+  Width = 320
+  HorzScrollBar.Page = 319
+  VertScrollBar.Page = 239
+  ActiveControl = ComboBox
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Высота шрифта'
+  ClientHeight = 240
+  ClientWidth = 320
+  ParentFont = True
+  Position = poScreenCenter
+  ShowHint = True
+  object Bevel: TBevel
+    Left = 6
+    Height = 58
+    Top = 8
+    Width = 160
+    Shape = bsFrame
+  end
+  object OKBtn: TButton
+    Left = 171
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 2
+  end
+  object CancelBtn: TButton
+    Left = 171
+    Height = 25
+    Top = 40
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 3
+  end
+  object CheckBox: TCheckBox
+    Left = 14
+    Height = 19
+    Hint = 'Если стоит галка - высота определяется относительно текущей высоте текста'
+    Top = 41
+    Width = 144
+    Caption = '&Относительно текущей'
+    OnClick = CheckBoxClick
+    TabOrder = 1
+  end
+  object ComboBox: TComboBox
+    Left = 25
+    Height = 21
+    Top = 15
+    Width = 106
+    AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+    ItemHeight = 13
+    Items.Strings = (
+      '1,8'
+      '2,5'
+      '3,5'
+      '5'
+      '7'
+      '10'
+      '14'
+      '20'
+    )
+    TabOrder = 0
+  end
+end
