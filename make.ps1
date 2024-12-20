@@ -66,13 +66,12 @@ Function Build-Project {
             }
         }
         'Add dependencies:' | Out-Host
-        Get-ChildItem -Filter '*.lpk' -Recurse -File –Path 'use'| Sort-Object | ForEach-Object {
-            If (& $VAR.Cmd --add-package-link $_) {
-                "    [SUCCESS] add dependence $($_)" | Out-Host
-            } Else {
-                "    [FAILED!] add dependence $($_)" | Out-Host
+        Get-ChildItem -Filter '*.lpk' -Recurse -File –Path 'use'|
+            Select-String -Pattern 'backup' -NotMatch -CaseSensitive |
+            Sort-Object |
+            ForEach-Object {
+                & $VAR.Cmd --add-package-link $_) | Out-Host
             }
-        }
     }
     'Build projects:' | Out-Host
     Get-ChildItem -Filter '*.lpi' -Recurse -File –Path 'src'| Sort-Object | ForEach-Object {
