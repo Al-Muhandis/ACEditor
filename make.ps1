@@ -78,15 +78,9 @@ Function Build-Project {
     }
     'Build projects:' | Out-Host
     Get-ChildItem -Filter '*.lpi' -Recurse -File –Path 'src'|
+        Sort-Object |
         ForEach-Object {
-            If (& $VAR.Cmd --no-write-project --recursive $_) {
-                "    [$($?)] build project $($LASTEXITCODE) $($_)" | Out-Host
-            } Else {
-                "    [$($?)] build project $($LASTEXITCODE) $($_)" | Out-Host
-                & $VAR.Cmd --no-write-project --recursive $_ | Out-Host
-                $exitCode = $LastExitCode
-                Throw $exitCode
-            }
+            & $VAR.Cmd --no-write-project --recursive $_ | Out-Host
         }
     "Done!" | Out-Host
 }
