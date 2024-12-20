@@ -1,0 +1,77 @@
+List of changes in version 2.88:
+* Support for FPC 3.0 & 3.2.
+* Support for Lazarus 2.0 & 2.1
+* Lot of bug fixes.
+
+List of changes in version 2.80.3:
+
+* Enabled TTrayIcon for wince.
+* Fixed compilation with FPC 2.2.3 and FPC 2.3.1. Patch by Carolos Foscolos.
+* MCK: Fixed updating of source code in trunk version of Lazarus.
+* MCK: Fixed code generation for new KOL application template, when form's unit name is renamed.
+* MCK: Add InitCommonControls() call to fix themed control drawing if only standard controls are used.
+* MCK: Fixed error "Restoring toolbar buttons bitmap from then previous version of the KOL&MCK format."
+
+List of changes in version 2.80.2:
+
+* MCK: It is not needed to rebuild Lazarus with -dDisableFakeMethod option anymore. MCK is not compatible with Lazarus 0.9.26 release.
+* MCK: Now it is possible to create new KOL projects and new KOL forms easily using "File > New..." menu item in Lazarus IDE.
+* MCK: Patch by Carolos Foscolos. Use windres instead of brcc32 for creating icon resources. Now it is possible to set icon for TKOLTrayIcon in design time.
+* MCK: Ignore design time form position and size for wince. There is no need to set defaultPosition and defaultSize properties to make form properly shown on wince anymore.
+* MCK: Fixed visual glitches in menu and action list editors.
+* MCK: Fixed issues with some CodeTools settings. Patch by Carolos Foscolos.
+* MCK: Fixed TKOLImageList. Thanks to Carolos Foscolos.
+* MCK: Fixed menu code generation.
+* MCK: Add UTF-8 BOM to form's .inc file.
+* ExecuteWait: Allow to specify empty string as AppPath parameter. In this case executable name must be specified in CmdLine. If full path is not provided for executable, it will be looked up in PATH. It works only for win32. AppPath parameter must be used for wince. Suggestion by Carolos Foscolos.
+
+List of changes in version 2.80.1:
+
+* Compatibility with FPC 2.2.2+
+* Added DisableAlign and EnableAlign methods.
+* Fixed 3-state checkbox.
+* Fixed ApplyImageLists2ListView by mdw.
+* Fixed AutoSize for wordwrapped checkboxes and radioboxes.
+* Fixed bug, which can cause random lock-ups of wince application.
+* Fixed Clipboard2Text.
+* Fixed combobox if USE_DROPDOWNCOUNT is defined.
+* Fixed DateTimeFormat.
+* Fixed DayOfWeek function. Thanks to JohnvdWaeter.
+* Fixed ExecuteWait.
+* Fixed Extended2Str for non-x86 by Bohdan.
+* Fixed ini file saving by mdw.
+* Fixed initial scrollbars stat in scrollbox on win32.
+* Fixed LVItemHeight by Bohdan.
+* Fixed MakeScrollable.
+* Fixed ParamStr for wince. Thanks to mdw.
+* Fixed RegKeyGetSubKeys for unicode;
+* Fixed return value of RegKeyGetBinary and RegKeyGetDateTime when error occurs.
+* Fixed setting Caption of owner-drawn menu item (bug #1829207).
+* Fixed setting graphic objects properties.
+* Fixed setting wordwrap for checkboxes and radioboxes.
+* Fixed TColorDialog for wince.
+* Fixed Text2Clipboard and WText2Clipboard. Thx to Carolos.
+* Fixed TOnBitBtnDraw description. Thanks to Chainfire.
+* Fixed visual glitch of autosized label with word wrap enabled.
+* ifdefed OnTBCustomDraw for wince. Patch by mdw.
+* Implemented LoadMappedBitmap, LoadMappedBitmapEx, CreateMappedBitmap, CreateMappedBitmapEx for wince.
+* Made sources xHelpGen compatible.
+* Optimized control alignment code. Alignment is faster now. Also it fixes problems when program is run in compatibility mode on devices with square QVGA screen (320x320).
+* removed err.pas until it will be FPC compatible.
+* Removed OnDropFiles implementation for wince.
+* Removed TMMTimer for wince.
+* Slightly improved speed of auto sizing.
+* Slightly improved speed of control creation and auto sizing.
+* MCK: Added public property TKOLToolbarButton.OnClickMethodName.
+* MCK: Fixed AV error when dropping TKOLForm component and projectDest is not set.
+* MCK: Fixed code generation with different Code Tools options settings. Thanks to Carolos for patch.
+* MCK: Fixed installation and usage in the latest revisions of Lazarus.
+* MCK: Fixed menu editor.
+* MCK: Fixed problem with codetools formatting. Patch by Carolos.
+* MCK: Fixed streaming error while saving form with TKOLImageList.
+* MCK: Forms other than main form are not visible by default.
+* MCK: ifdefed TKOLForm.closeIcon generated code for wince.
+* MCK: Published more event handlers for TKOLDateTimePicker.
+* MCK: Regenerate code when assigning some event handlers for a form.
+* MCK: Replaced all AnsiCompareFileName to AnsiCompareText. It fixes wrong path related errors. Thanks to Carolos.
+* MCK: Support for unicode LCL.

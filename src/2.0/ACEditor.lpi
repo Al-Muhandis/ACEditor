@@ -1,30 +1,108 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
+    <Version Value="12"/>
     <PathDelim Value="\"/>
-    <Version Value="6"/>
     <General>
-      <MainUnit Value="0"/>
-      <IconPath Value="./"/>
-      <TargetFileExt Value=".exe"/>
-      <ActiveEditorIndexAtStart Value="0"/>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+        <MainUnitHasScaledStatement Value="False"/>
+        <LRSInOutputDirectory Value="False"/>
+        <CompatibilityMode Value="True"/>
+      </Flags>
     </General>
     <VersionInfo>
-      <ProjectVersion Value=""/>
       <Language Value=""/>
       <CharSet Value=""/>
     </VersionInfo>
+    <BuildModes Count="3" Active="Debug">
+      <Item1 Name="default" Default="True"/>
+      <Item2 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+              <UseAnsiStrings Value="False"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <SmallerCode Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf3"/>
+              <UseLineInfoUnit Value="False"/>
+              <UseHeaptrc Value="True"/>
+              <TrashVariables Value="True"/>
+              <StripSymbols Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Parsing>
+            <SyntaxOptions>
+              <UseAnsiStrings Value="False"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+            <SmallerCode Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <RunWithoutDebug Value="True"/>
+              <UseLineInfoUnit Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item3>
+    </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <IgnoreBinaries Value="False"/>
-      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
-      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
     </PublishOptions>
     <RunParams>
       <local>
-        <FormatVersion Value="1"/>
-        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+        <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
       </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default">
+          <local>
+            <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
+          </local>
+        </Mode0>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="2">
       <Item1>
@@ -39,216 +117,149 @@
       <Unit0>
         <Filename Value="ACEditor.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ACEditor"/>
-        <CursorPos X="1" Y="20"/>
-        <TopLine Value="1"/>
+        <CursorPos Y="20"/>
         <UsageCount Value="56"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform.pas"/>
-        <ComponentName Value="Frm"/>
         <IsPartOfProject Value="True"/>
-        <ResourceFilename Value="mainform.lrs"/>
+        <ComponentName Value="Frm"/>
+        <HasResources Value="True"/>
         <UnitName Value="MainForm"/>
-        <CursorPos X="21" Y="480"/>
-        <TopLine Value="563"/>
-        <EditorIndex Value="0"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="456"/>
+        <CursorPos Y="456"/>
         <UsageCount Value="56"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="mainform_1.inc"/>
-        <CursorPos X="17" Y="62"/>
-        <TopLine Value="55"/>
+        <EditorIndex Value="1"/>
         <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="cmn.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Cmn"/>
-        <CursorPos X="45" Y="38"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="19"/>
-        <EditorIndex Value="1"/>
+        <CursorPos X="44" Y="38"/>
         <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="C:\lazarus\components\kolce\kol\KOL.PAS"/>
-        <UnitName Value="KOL"/>
-        <CursorPos X="3" Y="22086"/>
         <TopLine Value="22076"/>
+        <CursorPos X="3" Y="22086"/>
         <UsageCount Value="10"/>
       </Unit4>
       <Unit5>
         <Filename Value="acadtypes.pas"/>
         <UnitName Value="ACADTypes"/>
-        <CursorPos X="1" Y="39"/>
         <TopLine Value="243"/>
+        <CursorPos Y="39"/>
         <UsageCount Value="20"/>
       </Unit5>
       <Unit6>
         <Filename Value="C:\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
-        <CursorPos X="14" Y="1743"/>
         <TopLine Value="1723"/>
+        <CursorPos X="14" Y="1743"/>
         <UsageCount Value="9"/>
       </Unit6>
       <Unit7>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\win\wininc\func.inc"/>
-        <CursorPos X="10" Y="61"/>
         <TopLine Value="41"/>
+        <CursorPos X="10" Y="61"/>
         <UsageCount Value="9"/>
       </Unit7>
       <Unit8>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\win\wininc\ascdef.inc"/>
-        <CursorPos X="10" Y="69"/>
         <TopLine Value="49"/>
+        <CursorPos X="10" Y="69"/>
         <UsageCount Value="9"/>
       </Unit8>
       <Unit9>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\packages\fcl-registry\src\registry.pp"/>
-        <UnitName Value="registry"/>
         <CursorPos X="15" Y="103"/>
-        <TopLine Value="1"/>
         <UsageCount Value="9"/>
       </Unit9>
       <Unit10>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\objpas\sysutils\sysstrh.inc"/>
-        <CursorPos X="10" Y="138"/>
         <TopLine Value="113"/>
+        <CursorPos X="10" Y="138"/>
         <UsageCount Value="9"/>
       </Unit10>
       <Unit11>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\objpas\sysutils\sysstr.inc"/>
-        <CursorPos X="1" Y="1325"/>
         <TopLine Value="1286"/>
+        <CursorPos Y="1325"/>
         <UsageCount Value="9"/>
       </Unit11>
       <Unit12>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\win\sysutils.pp"/>
-        <UnitName Value="sysutils"/>
-        <CursorPos X="16" Y="708"/>
         <TopLine Value="688"/>
+        <CursorPos X="16" Y="708"/>
         <UsageCount Value="9"/>
       </Unit12>
       <Unit13>
         <Filename Value="C:\lazarus\fpc\2.2.0\source\rtl\objpas\sysutils\sysinth.inc"/>
-        <CursorPos X="1" Y="87"/>
         <TopLine Value="52"/>
+        <CursorPos Y="87"/>
         <UsageCount Value="9"/>
       </Unit13>
       <Unit14>
         <Filename Value="C:\lazarus\components\kolce\kol\KOLadd.pas"/>
-        <UnitName Value="KOLadd"/>
-        <CursorPos X="1" Y="1"/>
-        <TopLine Value="1"/>
         <UsageCount Value="9"/>
       </Unit14>
       <Unit15>
         <Filename Value="ACAttributes.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ACAttributes"/>
-        <CursorPos X="3" Y="452"/>
         <TopLine Value="580"/>
+        <CursorPos X="3" Y="452"/>
         <UsageCount Value="40"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus\components\kolce\kol\MCKfakeClasses.inc"/>
-        <CursorPos X="22" Y="41"/>
         <TopLine Value="21"/>
+        <CursorPos X="22" Y="41"/>
         <UsageCount Value="9"/>
       </Unit16>
       <Unit17>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
-        <CursorPos X="1" Y="5684"/>
         <TopLine Value="5665"/>
+        <CursorPos Y="5684"/>
         <UsageCount Value="10"/>
       </Unit17>
     </Units>
-    <JumpHistory Count="18" HistoryIndex="17">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="94" Column="42" TopLine="93"/>
+        <Filename Value="mainform_1.inc"/>
+        <Caret Line="62" Column="17" TopLine="55"/>
       </Position1>
       <Position2>
         <Filename Value="mainform.pas"/>
-        <Caret Line="458" Column="6" TopLine="456"/>
+        <Caret Line="93" Column="40" TopLine="92"/>
       </Position2>
-      <Position3>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="459" Column="31" TopLine="440"/>
-      </Position3>
-      <Position4>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="447" Column="24" TopLine="440"/>
-      </Position4>
-      <Position5>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="53" Column="27" TopLine="53"/>
-      </Position5>
-      <Position6>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="96" Column="37" TopLine="95"/>
-      </Position6>
-      <Position7>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="174" Column="24" TopLine="155"/>
-      </Position7>
-      <Position8>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="94" Column="41" TopLine="93"/>
-      </Position8>
-      <Position9>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="462" Column="1" TopLine="452"/>
-      </Position9>
-      <Position10>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="464" Column="30" TopLine="261"/>
-      </Position10>
-      <Position11>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="460" Column="1" TopLine="445"/>
-      </Position11>
-      <Position12>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="95" Column="40" TopLine="94"/>
-      </Position12>
-      <Position13>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="171" Column="1" TopLine="160"/>
-      </Position13>
-      <Position14>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="95" Column="1" TopLine="76"/>
-      </Position14>
-      <Position15>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="94" Column="42" TopLine="93"/>
-      </Position15>
-      <Position16>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="459" Column="12" TopLine="452"/>
-      </Position16>
-      <Position17>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="94" Column="15" TopLine="75"/>
-      </Position17>
-      <Position18>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="459" Column="12" TopLine="456"/>
-      </Position18>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
-    <Version Value="5"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
+    <Parsing>
+      <SyntaxOptions>
+        <UseAnsiStrings Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
-      <Generate Value="Smaller"/>
+      <SmallerCode Value="True"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
+        <GenerateDebugInfo Value="False"/>
         <UseLineInfoUnit Value="False"/>
         <StripSymbols Value="True"/>
       </Debugging>
@@ -259,9 +270,6 @@
         </Win32>
       </Options>
     </Linking>
-    <Other>
-      <CompilerPath Value="$(CompPath)"/>
-    </Other>
   </CompilerOptions>
   <Debugging>
     <Watches Count="1">
