@@ -70,9 +70,9 @@ Function Build-Project {
             Sort-Object |
             ForEach-Object {
                 If (& $VAR.Cmd --add-package-link $_) {
-                    "    [$($LASTEXITCODE)] add dependence $($_)" | Out-Host
+                    "    [$($?)] add dependence $($_)" | Out-Host
                 } Else {
-                    "    [$($LASTEXITCODE)] add dependence $($_)" | Out-Host
+                    "    [$($?)] add dependence $($_)" | Out-Host
                 }
             }
     }
@@ -81,10 +81,10 @@ Function Build-Project {
         Select-String -Pattern 'backup' -NotMatch -CaseSensitive |
         Sort-Object |
         ForEach-Object {
-            If (! (& $VAR.Cmd --no-write-project --recursive $_)) {
-                "    [SUCCESS] build project $($_)" | Out-Host
+            If (& $VAR.Cmd --no-write-project --recursive $_) {
+                "    [$($?)] build project $($LASTEXITCODE) $($_)" | Out-Host
             } Else {
-                "    [FAILED!] build project $($_)" | Out-Host
+                "    [$($?)] build project $($LASTEXITCODE) $($_)" | Out-Host
                 & $VAR.Cmd --no-write-project --recursive $_ | Out-Host
                 $exitCode = $LastExitCode
                 Throw $exitCode
