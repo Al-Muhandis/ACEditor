@@ -81,7 +81,14 @@ Function Build-Project {
         Select-String -Pattern 'backup' -NotMatch -CaseSensitive |
         Sort-Object |
         ForEach-Object {
-            & $VAR.Cmd --no-write-project --recursive $_ | Out-Host
+            If (! (& $VAR.Cmd --no-write-project --recursive $_)) {
+                "    [SUCCESS] build project $($_)" | Out-Host
+            } Else {
+                "    [FAILED!] build project $($_)" | Out-Host
+                & $VAR.Cmd --no-write-project --recursive $_ | Out-Host
+                $exitCode = $LastExitCode
+                Throw $exitCode
+            }
         }
     "Done!" | Out-Host
 }
