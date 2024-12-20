@@ -70,9 +70,9 @@ Function Build-Project {
             Sort-Object |
             ForEach-Object {
                 If (& $VAR.Cmd --add-package-link $_) {
-                    "    [SUCCESS] add dependence $($_)" | Out-Host
+                    "    [$($LASTEXITCODE)] add dependence $($_)" | Out-Host
                 } Else {
-                    "    [FAILED!] add dependence $($_)" | Out-Host
+                    "    [$($LASTEXITCODE)] add dependence $($_)" | Out-Host
                 }
             }
     }
