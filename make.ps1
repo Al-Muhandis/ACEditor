@@ -67,23 +67,22 @@ Function Build-Project {
         }
         'Add dependencies:' | Out-Host
         Get-ChildItem -Filter '*.lpk' -Recurse -File –Path 'use'|
-            Select-String -Pattern 'backup' -NotMatch -CaseSensitive |
             Sort-Object |
             ForEach-Object {
-                & $VAR.Cmd --add-package-link $_ | Out-Host
+                If (& $VAR.Cmd --add-package-link $_) {
+                    "    [SUCCESS] add dependence $($_)" | Out-Host
+                } Else {
+                    "    [FAILED!] add dependence $($_)" | Out-Host
+                }
             }
     }
     'Build projects:' | Out-Host
-    Get-ChildItem -Filter '*.lpi' -Recurse -File –Path 'src'| Sort-Object | ForEach-Object {
-        If (& $VAR.Cmd --no-write-project --recursive $_) {
-            "    [SUCCESS] build project $($_)" | Out-Host
-        } Else {
-            "    [FAILED!] build project $($_)" | Out-Host
+    Get-ChildItem -Filter '*.lpi' -Recurse -File –Path 'src'|
+        Select-String -Pattern 'backup' -NotMatch -CaseSensitive |
+        Sort-Object |
+        ForEach-Object {
             & $VAR.Cmd --no-write-project --recursive $_ | Out-Host
-            $exitCode = $LastExitCode
-            Throw $exitCode
         }
-    }
     "Done!" | Out-Host
 }
 
