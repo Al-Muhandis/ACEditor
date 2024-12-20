@@ -70,7 +70,7 @@ Function Build-Project {
             Select-String -Pattern 'backup' -NotMatch -CaseSensitive |
             Sort-Object |
             ForEach-Object {
-                & $VAR.Cmd --add-package-link $_) | Out-Host
+                & $VAR.Cmd --add-package-link $_ | Out-Host
             }
     }
     'Build projects:' | Out-Host
